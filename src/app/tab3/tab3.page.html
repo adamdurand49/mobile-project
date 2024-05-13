@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Nutrition
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-item>
+    <ion-label position="stacked">Enter a food item:</ion-label>
+    <ion-input type="text" [(ngModel)]="query"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="searchNutrition()">Search</ion-button>
+
+  <ion-list *ngIf="nutritionData.length > 0">
+    <ion-item *ngFor="let item of nutritionData">
+      <ion-label>{{ item.name }}: {{ item.calories }} calories</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Display error message if fetching nutrition data fails -->
+  <ion-text color="danger" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </ion-text>
 </ion-content>

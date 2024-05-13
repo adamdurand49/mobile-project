@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  //User info
+  name: string = ''; 
+  age: number | null = null; 
+  height: number | null = null; 
+  weight: number | null = null; 
 
   constructor() {}
 

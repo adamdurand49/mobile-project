@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Workouts
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-item>
+    <ion-label position="stacked">Enter the muscle you would like to work out:</ion-label>
+    <ion-input type="text" [(ngModel)]="muscle"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="searchExercises()">Search</ion-button>
+
+  <ion-list *ngIf="exercises && exercises.length > 0">
+    <ion-item *ngFor="let exercise of exercises">
+      <ion-label>{{ exercise.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Display error message if fetching exercises fails -->
+  <ion-text color="danger" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </ion-text>
 </ion-content>

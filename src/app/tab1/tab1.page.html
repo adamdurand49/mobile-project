@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Profile
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,28 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Input field for name -->
+  <ion-item>
+    <ion-label position="stacked">Name:</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <!-- Input field for age -->
+  <ion-item>
+    <ion-label position="stacked">Age:</ion-label>
+    <ion-input type="number" [(ngModel)]="age"></ion-input>
+  </ion-item>
+
+  <!-- Input field for height -->
+  <ion-item>
+    <ion-label position="stacked">Height (cm):</ion-label>
+    <ion-input type="number" [(ngModel)]="height"></ion-input>
+  </ion-item>
+
+  <!-- Input field for weight -->
+  <ion-item>
+    <ion-label position="stacked">Weight (kg):</ion-label>
+    <ion-input type="number" [(ngModel)]="weight"></ion-input>
+  </ion-item>
+
 </ion-content>
