@@ -14,12 +14,14 @@ export class Tab2Page {
   constructor(private http: HttpClient) {}
 
   searchExercises() {
+    //Nothing would come up after inputting a muscle
+    //After hard coding the variables, the exercises did apper after entering muscle 1/2
+    //Its likely to be a problem with the API as the Nutrition tab worked
     this.exercises = [
       { name: 'Exercise 1', muscle: 'Muscle 1' },
       { name: 'Exercise 2', muscle: 'Muscle 2' },
-      // Add more sample exercises as needed
     ];
-    
+
     if (!this.muscle) {
       this.errorMessage = 'Please enter a muscle.';
       return;
